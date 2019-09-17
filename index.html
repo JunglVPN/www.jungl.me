@@ -10,7 +10,7 @@
 	<meta name="description" content="Jungl is a VPN service">
 	<meta name="author" content="">
 
-	<title>Jungl</title>
+	<title>Jungl VPN</title>
 
 	<!-- Mobile Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -234,7 +234,7 @@
 			<div class="row">
 				<div class="content-head content-head-lite">
 					<h3>Monthly plans</h3>
-					<p>Sign-up is quick & easy (prices are in Australian Dollars)</p>
+					<p>Sign-up is quick & easy (prices are now in USD)</p>
 				</div>
 			</div>
 			<div class="row">
@@ -245,7 +245,7 @@
 							<strong>Outline <span class="label label-success">popular!</span> </strong>
 						</div>
 						<div class="panel-body">
-							<h3 class="panel-title price">A$4.75<span class="price-cents">/month</span></h3>
+							<h3 class="panel-title price">$4.99<span class="price-cents">/month</span></h3>
 						</div>
 						<ul class="list-group">
 							<li class="list-group-item">Outline VPN</li>
@@ -253,7 +253,45 @@
 							<li class="list-group-item">Great Support</li>
 							<li class="list-group-item">Instant Activation</li>
 							<li class="list-group-item">Cancel Anytime</li>
-							<li class="list-group-item"><a class="btn-main" href="https://jungl.chargifypay.com/subscribe/jcv6xj2tp5qx/outline-monthly">Choose Plan</a></li>
+							<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-outline-monthly"
+  role="link"
+>
+  Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+  var stripe = Stripe('pk_live_PsoYCfXjAvdCgTLJE5z0BLgN00YcTbwCxS');
+
+  var checkoutButton = document.getElementById('checkout-button-outline-monthly');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{plan: 'outline-monthly', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'https://www.jungl.me/success',
+      cancelUrl: 'https://www.jungl.me/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+</script>
 						</ul>
 					</div>
 				</div>
@@ -276,14 +314,52 @@
 							<strong>Outline <span class="label label-success">popular!</span> </strong>
 						</div>
 						<div class="panel-body">
-							<h3 class="panel-title price">A$49.90<span class="price-cents">/year</span></h3>
+							<h3 class="panel-title price">$54<span class="price-cents">/year</span></h3>
 						</div>
 						<ul class="list-group">
 							<li class="list-group-item">VPN for all your devices</li>
 							<li class="list-group-item">Mac, PC, iOS and Android</li>
 							<li class="list-group-item">Great Support</li>
 							<li class="list-group-item">Instant Activation</li>
-							<li class="list-group-item"><a class="btn-main" href="https://jungl.chargifypay.com/subscribe/2pmr66tggdmf/outline-annual">Choose Plan</a></li>
+							<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-outline-annual"
+  role="link"
+>
+  Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+  var stripe = Stripe('pk_live_PsoYCfXjAvdCgTLJE5z0BLgN00YcTbwCxS');
+
+  var checkoutButton = document.getElementById('checkout-button-outline-annual');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{plan: 'outline-annual', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'https://www.jungl.me/success',
+      cancelUrl: 'https://www.jungl.me/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+</script>
 						</ul>
 					</div>
 				</div>
@@ -291,6 +367,8 @@
 		</div>
 	</div>
 	<!-- PRICING -->
+
+	&nbsp;
 
 	<!-- TESTIMONIALS -->
 	<div class="testimonials">
