@@ -245,7 +245,7 @@
 							<strong>Outline <span class="label label-success">popular!</span> </strong>
 						</div>
 						<div class="panel-body">
-							<h3 class="panel-title price">$4.99<span class="price-cents">/month</span></h3>
+							<h3 class="panel-title price">$7.50<span class="price-cents">/month</span></h3>
 						</div>
 						<ul class="list-group">
 							<li class="list-group-item">Outline VPN</li>
@@ -253,10 +253,10 @@
 							<li class="list-group-item">Great Support</li>
 							<li class="list-group-item">Instant Activation</li>
 							<li class="list-group-item">Cancel Anytime</li>
-							<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <button
   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-outline-monthly"
+  id="checkout-button-plan_GY6NiE60UxMs0H"
   role="link"
 >
   Checkout
@@ -265,14 +265,15 @@
 <div id="error-message"></div>
 
 <script>
+(function() {
   var stripe = Stripe('pk_live_PsoYCfXjAvdCgTLJE5z0BLgN00YcTbwCxS');
 
-  var checkoutButton = document.getElementById('checkout-button-outline-monthly');
+  var checkoutButton = document.getElementById('checkout-button-plan_GY6NiE60UxMs0H');
   checkoutButton.addEventListener('click', function () {
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
-      items: [{plan: 'outline-monthly', quantity: 1}],
+      items: [{plan: 'plan_GY6NiE60UxMs0H', quantity: 1}],
 
       // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
@@ -291,6 +292,7 @@
       }
     });
   });
+})();
 </script>
 						</ul>
 					</div>
@@ -314,17 +316,17 @@
 							<strong>Outline <span class="label label-success">popular!</span> </strong>
 						</div>
 						<div class="panel-body">
-							<h3 class="panel-title price">$54<span class="price-cents">/year</span></h3>
+							<h3 class="panel-title price">$82.5<span class="price-cents">/year</span></h3>
 						</div>
 						<ul class="list-group">
 							<li class="list-group-item">VPN for all your devices</li>
 							<li class="list-group-item">Mac, PC, iOS and Android</li>
 							<li class="list-group-item">Great Support</li>
 							<li class="list-group-item">Instant Activation</li>
-							<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <button
   style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-outline-annual"
+  id="checkout-button-plan_GY6a9w3ScCXpJj"
   role="link"
 >
   Checkout
@@ -333,14 +335,15 @@
 <div id="error-message"></div>
 
 <script>
+(function() {
   var stripe = Stripe('pk_live_PsoYCfXjAvdCgTLJE5z0BLgN00YcTbwCxS');
 
-  var checkoutButton = document.getElementById('checkout-button-outline-annual');
+  var checkoutButton = document.getElementById('checkout-button-plan_GY6a9w3ScCXpJj');
   checkoutButton.addEventListener('click', function () {
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
-      items: [{plan: 'outline-annual', quantity: 1}],
+      items: [{plan: 'plan_GY6a9w3ScCXpJj', quantity: 1}],
 
       // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
@@ -359,6 +362,7 @@
       }
     });
   });
+})();
 </script>
 						</ul>
 					</div>
@@ -513,7 +517,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7">
-					<p>&copy; 2019 Jungl VPN. All rights reserved.</p>
+					<p>&copy; 2020 Jungl VPN. All rights reserved.</p>
 				</div>
 
 				<div class="col-md-5">
